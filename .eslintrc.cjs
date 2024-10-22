@@ -1,6 +1,7 @@
-import path from "path";
-
 module.exports = {
+  env: {
+    node: true
+  },
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
@@ -15,14 +16,12 @@ module.exports = {
       version: 'detect',
     },
     'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
-    alias: {
-      map: [['~', path.resolve(__dirname, './src')]],
-      extensions: ['.js', '.jsx', '.ts', '.d.ts', '.tsx'],
+      alias: {
+        map: [
+          ['~', './src']
+        ],
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
     },
   },
   rules: {
