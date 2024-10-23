@@ -6,7 +6,10 @@ import LayoutApp from "~/layouts/App";
 
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
+    element: <Navigate to={routes.dashboard} />,
+  },
+  {
     element: <LayoutApp />,
     children: [
       {
@@ -18,9 +21,5 @@ export const router = createBrowserRouter([
         element: <NewUserPage />,
       }
     ]
-  },
-  {
-    path: "*",
-    element: <Navigate to={routes.dashboard} />,
   }
 ]);

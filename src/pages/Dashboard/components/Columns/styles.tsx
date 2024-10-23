@@ -1,45 +1,41 @@
 import styled from "styled-components";
-const registrationStatusStyles: {
-  [key in string]: { background: string; title: string };
-} = {
-  REVIEW: {
-    background: "#FDF8E9",
-    title: "#EFC24D",
-  },
-  APPROVED: {
-    background: "#EEEEFD",
-    title: "#4242DF",
-  },
-  REPROVED: {
-    background: "#FBEDF6",
-    title: "#CE2893",
-  },
+import { Status } from ".";
+import { darken, lighten, rem } from "polished";
+
+type Colors = 'yellow' | 'blue' | 'pink'
+
+const registrationStatusStyles: Record<Status, Colors> = {
+  REVIEW: 'yellow',
+  APPROVED: 'blue',
+  REPROVED: 'pink',
 };
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 24px;
+  grid-template-columns: 1fr;
+  grid-gap: ${({ theme }) => theme.spacing.lg};
   justify-content: center;
-  margin-top: 24px;
+  margin-top: ${({ theme }) => theme.spacing.lg};
+
+  @media ${({ theme }) => theme.responsive.md} {
+    grid-template-columns: 1fr 1fr 1fr;
+    height: calc(100vh - ${rem(186)});
+  }
 `;
 
-export const Column = styled.div<{ status: any }>`
+export const Column = styled.div<{ status: Status }>`
   height: auto;
-  background-color: ${({ status }) =>
-    registrationStatusStyles[status].background};
-  border-radius: 32px;
-  min-height: 80vh;
-  max-height: 80vh;
+  background-color: ${({ status, theme }) => lighten(0.35, theme.colors[registrationStatusStyles[status]])};
+  border-radius: ${({ theme }) => theme.rounded.lg};
+  border: 1px solid ${({ status, theme }) => lighten(0.3, theme.colors[registrationStatusStyles[status]])};
+  padding: ${({ theme }) => theme.spacing.lg};
 `;
 
-export const TitleColumn = styled.h3<{ status: any }>`
-  margin: 0px;
-  color: ${({ status }) => registrationStatusStyles[status].title};
-  margin: 24px;
+export const TitleColumn = styled.h3<{ status: Status }>`
+  margin: 0;
+  color: ${({ status, theme }) => darken(0.2, theme.colors[registrationStatusStyles[status]])};
 `;
 
 export const CollumContent = styled.div`
   overflow: auto;
-  max-height: 85%;
 `;

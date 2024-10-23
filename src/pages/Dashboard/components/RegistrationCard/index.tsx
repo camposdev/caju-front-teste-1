@@ -1,4 +1,4 @@
-import { ButtonSmall } from "~/components/Buttons";
+import Button from "~/components/Button";
 import * as S from "./styles";
 import {
   HiOutlineMail,
@@ -27,9 +27,9 @@ const RegistrationCard = (props: Props) => {
         <span>{props.data.admissionDate}</span>
       </S.IconAndText>
       <S.Actions>
-        <ButtonSmall bgcolor="rgb(255, 145, 154)" >Reprovar</ButtonSmall>
-        <ButtonSmall bgcolor="rgb(155, 229, 155)">Aprovar</ButtonSmall>
-        <ButtonSmall bgcolor="#ff8858">Revisar novamente</ButtonSmall>
+        <Button color="danger" size="small">Reprovar</Button>
+        <Button color="success" size="small">Aprovar</Button>
+        <Button color="warning" size="small">Revisar novamente</Button>
 
         <HiOutlineTrash />
       </S.Actions>

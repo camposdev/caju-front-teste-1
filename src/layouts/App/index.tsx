@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import { Header } from "~/components/Header";
+import * as S from "./styles";
 
 function LayoutApp() {
   return (
@@ -8,7 +9,9 @@ function LayoutApp() {
         <h1>Caju Front Teste</h1>
       </Header>
 
-      <Outlet />
+      <S.Container>
+        <Outlet />
+      </S.Container>
     </>
   );
 }

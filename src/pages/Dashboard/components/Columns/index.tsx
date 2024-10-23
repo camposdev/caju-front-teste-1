@@ -1,8 +1,13 @@
-
 import * as S from "./styles";
 import RegistrationCard from "../RegistrationCard";
 
-const allColumns = [
+export type Status = 'REVIEW' | 'APPROVED' | 'REPROVED'
+type Columns = {
+  status: Status
+  title: string
+}
+
+const allColumns: Columns[] = [
   { status: 'REVIEW', title: "Pronto para revisar" },
   { status: 'APPROVED', title: "Aprovado" },
   { status: 'REPROVED', title: "Reprovado" },
@@ -11,6 +16,7 @@ const allColumns = [
 type Props = {
   registrations?: any[];
 };
+
 const Collumns = (props: Props) => {
   return (
     <S.Container>

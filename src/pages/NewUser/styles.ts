@@ -1,30 +1,17 @@
 import styled from "styled-components";
-import { _IconButtonStyled } from "~/components/Buttons/IconButton";
-import Button from "~/components/Buttons";
 
-
-export const Container = styled.div`
+export const Form = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 16px;
+  margin: ${({ theme }) => theme.spacing.xl} 0;
+  gap: ${({ theme }) => theme.spacing.md};
 `;
 
 export const Card = styled.div`
-  border: 2px solid #f0f0f0;
-  width: 500px;
-  padding: 48px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
- 
-  ${_IconButtonStyled} {
-    margin-bottom: 8px;
-    align-items: flex-start;
-  }
-
-  ${Button}{
-    align-self: flex-end;
-  }
+  max-width: 500px;
+  padding: ${({ theme }) => theme.spacing.lg};
+  margin: 0 auto;
+  border: 1px solid ${({ theme }) => theme.colors.grey};
+  border-radius: ${({ theme }) => theme.spacing.lg};
+  box-shadow: ${({ theme }) => theme.shadow.lg};
 `;

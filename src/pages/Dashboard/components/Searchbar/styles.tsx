@@ -2,14 +2,27 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing.md};
+
+  @media ${({ theme }) => theme.responsive.md} {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+      width: 300px;
+    }
+  }
 `;
 
 export const Actions = styled.div`
   display: flex;
-  justify-content: flex-end;
   align-items: center;
-  gap: 16px;
+  gap: ${({ theme }) => theme.spacing.md};
+
+  @media ${({ theme }) => theme.responsive.md} {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
