@@ -1,6 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";  
-import DashboardPage from "~/pages/Dashboard";
-import NewUserPage from "~/pages/NewUser";
+import Dashboard from "~/pages/dashboard/Dashboard";
+import NewUser from "~/pages/users/NewUser";
 import routes from "./routes";
 import LayoutApp from "~/layouts/App";
 
@@ -14,11 +14,11 @@ export const router = createBrowserRouter([
     children: [
       {
         path: routes.dashboard,
-        element: <DashboardPage />,
+        element: <Dashboard />,
       },
       {
         path: routes.newUser,
-        element: <NewUserPage />,
+        element: <NewUser />,
       }
     ]
   }

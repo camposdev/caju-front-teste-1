@@ -44,7 +44,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Inter", sans-serif;
     margin: 0px;
-    padding-top: 64px;
     color: ${theme.colors.foreground};
   }
   * {
