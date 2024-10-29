@@ -2,7 +2,7 @@ import { HiRefresh } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 import Button from "~/components/Button";
 import IconButton from "~/components/IconButton";
-import routes from "~/router/routes";
+import routes from "~/router/paths";
 import * as S from "./styles";
 import SearchCPF from "../SearchCPF";
 

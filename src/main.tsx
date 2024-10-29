@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import { router } from "./router";
+import { router } from "./router/router";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle, theme } from "./lib/theme";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";

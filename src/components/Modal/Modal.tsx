@@ -31,7 +31,7 @@ const Modal = ({ open, title, body, actions, onClose }: TProps) => {
             )}            
 
             <S.Close onClick={onClose}>
-              <IconButton size="small" aria-label="Fechar modal">
+              <IconButton size="small" aria-label="Fechar modal" data-testid="close-modal">
                 <HiX />
               </IconButton>
             </S.Close>

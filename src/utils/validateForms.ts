@@ -28,10 +28,10 @@ export function validateCPF(cpf: string) {
 
 export const validateEmail = (value: string) => {
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailPattern.test(value) || "Email inválido";
+  return emailPattern.test(value);
 };
 
 export const validateName = (value: string) => {
   const namePattern = /^(?=.{2,}\s.{2,})[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
-  return namePattern.test(value) || "Insira seu nome completo (mínimo de duas letras para cada nome)";
+  return namePattern.test(value);
 };

@@ -36,7 +36,7 @@ const Collumns = ({ registrations, onUpdate, onDelete }: TProps) => {
                 {registrations?.isFetching ? (
                   <>
                     <S.Loading $status={collum.status}>
-                      <Spinner />
+                      <Spinner aria-label="Carregando" />
                     </S.Loading>
                   </>
                 ) : (

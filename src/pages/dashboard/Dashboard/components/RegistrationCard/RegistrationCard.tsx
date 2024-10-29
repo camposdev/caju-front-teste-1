@@ -17,7 +17,7 @@ type TProps = {
 
 const RegistrationCard = ({ data, onUpdate, onDelete }: TProps) => {
   return (
-    <S.Card $status={data.status}>
+    <S.Card $status={data.status} aria-label="Candidato">
       <S.HeaderContent>
         <S.IconAndText>
           <HiOutlineUser />

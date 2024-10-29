@@ -3,7 +3,7 @@ import Button from "~/components/Button";
 import { HiOutlineArrowLeft } from "react-icons/hi";
 import IconButton from "~/components/IconButton";
 import { useNavigate } from "react-router-dom";
-import routes from "~/router/routes";
+import routes from "~/router/paths";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { validateCPF, validateEmail, validateName } from "~/utils/validateForms";
 import { TRegistration } from "~/api/registrations/types";
@@ -58,7 +58,7 @@ const NewUser = () => {
             placeholder="Nome completo"
             {...register('name', { 
               required: "O Nome completo é obrigatório",
-              validate: validateName 
+              validate: validateName || "Insira seu nome completo (mínimo de duas letras para cada nome)"
             })}
             error={errors && errors.name?.message} 
           />
@@ -70,7 +70,7 @@ const NewUser = () => {
             type="email" 
             {...register("email", {
               required: "O campo E-mail é obrigatório",
-              validate: validateEmail
+              validate: validateEmail || "Email inválido"
             })} 
             error={errors && errors.email?.message} 
           />

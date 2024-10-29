@@ -10,5 +10,6 @@ export default {
   moduleNameMapper: {
     "^~/(.+)": "<rootDir>/src/$1",
   },
-//   setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
+  testMatch: ["**/*.test.tsx", "**/*.test.ts"]
+  // setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
 };

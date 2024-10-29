@@ -1,7 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";  
 import Dashboard from "~/pages/dashboard/Dashboard";
 import NewUser from "~/pages/users/NewUser";
-import routes from "./routes";
+import routes from "./paths";
 import LayoutApp from "~/layouts/App";
 
 export const router = createBrowserRouter([
